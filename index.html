@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index_style.css">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-image: url(../img/backgrndstart.jpg);
+        background-position: -300px 40px;
+        background-repeat: repeat-y;
+     
+    }
+
+    #block{
+        position: relative;
+        color:brown;
+    }
+
+    .block2{
+        position: relative;
+        color:blue;
+    }
+    .anim{
+        transition: all 1s ease;
+     color:red;
+     font-size: 24pt;
+    }
+    #checkbut{
+    
+       
+text-align:center;
+position:fixed;
+bottom:0px;
+right:0px;
+cursor:pointer;
+color:#333;
+font-family:verdana;
+font-size:1px;
+
+    }
+   
+   #music{
+display: none;
+   }
+   
+   button{
+       margin: 0px auto;
+      
+   }
+   #testgr{
+       margin: 0px auto;
+       width: 900px;
+       height: 900px;
+       background-color: brown;
+   }
+   #blockins{
+    display: inline-block;
+       width: 30px;
+       height: 30px;
+       background-color: burlywood;
+       margin: 0px;
+       padding: 0px;
+   }
+   #blockins2{
+    display: inline-block;
+    
+    width: 45px;
+       height: 45px;
+       background-color:coral;
+       margin: 0px;
+       padding: 0px;
+   }
+   #bl{
+    margin: 0px;
+       padding: 0px;
+   }
+
+   #bl2{
+    margin: 0px;
+       padding: 0px;
+}
+audio{
+display: none;
+}
+
+button{
+    display: flex;
+    margin: 400px auto;
+    
+    padding: 10px 15px;
+  border: none;
+  font: Arial;
+  color: gold;
+  background-color: gray;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 30pt;
+}
+button:hover{
+    border:2px solid red;
+    border-radius: 15px;
+}
+.h{
+    margin: 30px auto;
+    width: 98%;
+    padding: 50px 0px;
+    font-size: 28pt;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    background-color: rgb(53, 53, 53);
+    border-radius: 20px;
+    opacity: 0.90;
+}
+#teach{
+  
+    display: none;
+  
+
+    position:absolute;
+    top:0px;
+    left: 0px;
+    z-index: 999;
+
+
+}
+</style>
+<body>
+<audio src="../au/5.mp3" controls loop></audio>
+    <button onclick="audiopr()"> Start Game </button>
+
+    <div id="teach">
+<p class="h">Управления осуществовляеться кнопками громкости , для того чтобы начать игру зажмите кнопку громкости до упора вверх и нажмите на кнопку продолжить   </p>
+  
+<button onclick="straud()" style="display: flex;  margin: 0px auto; position: relative; top: 20px;" >Продолжить</button>
+</div>
+<!--   <div id="testgr">
+
+        <div id="bl">
+<div id="blockins"></div>
+<div id="blockins"></div>
+</div>
+
+<div id="bl2">
+
+<div id="blockins2"></div>
+<div id="blockins2"></div>
+
+</div>
+</div>
+--> 
+
+  
+
+
+    <!-- <audio  id="music"  src="../audio/5.mp3" controls  >
+    </audio>
+    <div id='checkbut'> Check</div>
+
+<button onclick="pltrak()">Start Game</button>
+<canvas id="game" width="608" height="608"></canvas>
+
+
+
+    <script defer>
+        
+       /* function colr(){
+            let bloc = document.querySelector("#block");
+            let bloc2 = document.querySelector("#block2");
+            /*bloc.style.cssText += `background-color:red`;
+            bloc.style.cssText += `top:25px`;
+            let cl = bloc.style.backgroundColor;
+            let cltx = bloc.style.color;
+            let tp = bloc.style.top;
+            alert(cl);
+            alert(cltx);
+            alert("top:"+tp);*/
+            /*
+            const elementStyle = getComputedStyle(bloc);
+            console.log(elementStyle.top);
+            const elementStyle2 = getComputedStyle(bloc2);
+            console.log(elementStyle2.top);
+
+        }*/
+
+       document.onclick = pltrak;
+        function pltrak(){
+            let track = document.querySelector('#music');
+            track.play();
+            
+        }
+
+        
+     
+        
+
+var scr = 0 ;
+document.onscroll = checkcord;
+function checkcord(){
+
+
+        function getCoords(elem) { // кроме IE8-
+  var box = elem.getBoundingClientRect();
+  return box.top + pageYOffset
+  
+}
+let elstrt = document.querySelector(".block2");
+let cordstsr = getCoords(elstrt);
+
+console.log("txtcord = "+cordstsr);
+
+let elbut = document.querySelector("#checkbut");
+let cordsdt = getCoords(elbut);
+console.log(cordsdt);
+
+console.log("до = "+scr);
+if (cordsdt-50 >= cordstsr && scr==0){
+    elstrt.classList.add("anim");
+     //   alert("check");
+    scr +=1;
+    console.log("во = "+scr);
+}
+//if(cordsdt+60 <)
+/*
+--------------------------------------------------------
+после возвращения с верху или снизу запускать анимацию 
+--------------------------------------------------------
+*/
+
+
+
+}
+
+
+
+</script>-->
+<script>
+
+    function audiopr(){
+        let WDT = window.outerWidth;
+        let DV = document.querySelector("#teach");// доступ к div
+        DV.style.cssText = `display:inline ; width:${WDT}px`
+        
+        console.log(WDT);
+        let BT = document.querySelector("button");// доступ к button
+        BT.style.cssText = `display: flex;`
+      /*  let BD = document.querySelector("body"); // доступ к body
+        BD.style.cssText = `background-position:2000px 0px`*/
+        
+    }
+    function straud(){
+    
+            let track = document.querySelector("audio");
+            track.play();
+    }
+</script>
+</body>
+</html>
